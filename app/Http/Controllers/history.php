@@ -15,7 +15,7 @@ class history extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        $tasks = Task::where('status',true)->get();
         return view('history.index', compact('tasks'));
     }
 
