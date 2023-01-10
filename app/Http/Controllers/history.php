@@ -47,7 +47,7 @@ class history extends Controller
   $task->save();
  
   //リダイレクト
-  return redirect('/tasks');
+  return redirect('/history');
     }
 
     /**
@@ -81,7 +81,14 @@ class history extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         //該当のタスクを検索
+      $task = Task::find($id);
+      //モデル->カラム名 = 値 で、データを割り当てる
+      $task->status = false; //true:完了、false:未完了
+      //データベースに保存
+      $task->save();
+      //リダイレクト
+      return redirect('/tasks');
     }
 
     /**
