@@ -20,4 +20,6 @@ Route::get('/list', [TodoListController::class, 'index']);
 use App\Http\Controllers\TaskController;
  
 Route::resource('tasks', TaskController::class);
+use App\Http\Controllers\history;
  
+Route::resource('history', history::class);
