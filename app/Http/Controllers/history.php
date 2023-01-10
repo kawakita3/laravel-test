@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class history extends Controller
 {
@@ -14,7 +15,8 @@ class history extends Controller
      */
     public function index()
     {
-        //
+        $tasks = Task::all();
+        return view('history.index', compact('tasks'));
     }
 
     /**
@@ -35,7 +37,17 @@ class history extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //モデルをインスタンス化
+  $task = new Task;
+ 
+  //モデル->カラム名 = 値 で、データを割り当てる
+  $task->name = $request->input('task_name');
+ 
+  //データベースに保存
+  $task->save();
+ 
+  //リダイレクト
+  return redirect('/tasks');
     }
 
     /**
