@@ -71,6 +71,10 @@
                                       <div>
                                           {{ $item->name }}
                                       </div>
+                                      <div>
+                                        {{ $item->category }}
+                                      </div>
+                                        
                                   </td>
                                   <td class="p-0 text-right text-sm font-medium">
                                       <div class="flex justify-end">

@@ -51,7 +51,6 @@ unset($__errorArgs, $__bag); ?>
                         <option value="趣味">趣味</option>
                         <option value="その他">その他</option>
                     </select>
- 
                     <button type="submit" class="mt-8 p-4 bg-slate-800 text-white w-full max-w-xs hover:bg-slate-900 transition-colors">
                         追加する
                     </button>
@@ -81,6 +80,11 @@ unset($__errorArgs, $__bag); ?>
                                           <?php echo e($item->name); ?>
 
                                       </div>
+                                      <div>
+                                        <?php echo e($item->category); ?>
+
+                                      </div>
+                                        
                                   </td>
                                   <td class="p-0 text-right text-sm font-medium">
                                       <div class="flex justify-end">
